@@ -1,15 +1,69 @@
-.header {
-    grid-area: h;
-    background: #2AABE4;
+.headerContainer {
+  background: #ffffff;
+  width: 100%;
+  position: fixed;
 }
 
-.header img {
-    height: 20px;
-    width: 20px;
-    padding: 5px;
+.header {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 55px 200px 1fr;
+  grid-template-rows: 45px;
+}
+
+.logo {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  padding-left: 15px;
+}
+
+.logoName {
+  height: 45px;
+}
+
+.logoName span {
+  line-height: 45px;
 }
 
 .authBlock {
-    float: right;
-    color: white;
+  justify-self: right;
+  display: grid;
+  grid-template-columns: 1fr 45px 52px;
+}
+
+.authBlock img {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+}
+
+.authBlock a {
+  text-decoration: none;
+}
+
+.loginName {
+  color: black;
+  line-height: 45px;
+}
+
+.loginName span {
+  border-radius: 4px;
+}
+
+.loginName span:hover {
+  background-color: #bbbcbd;
+}
+
+.logoutBlock {
+  height: 45px;
+}
+
+.logoutBlock:hover {
+  background-color: #bbbcbd;
+}
+
+.userPhoto {
+  border-radius: 22px;
 }

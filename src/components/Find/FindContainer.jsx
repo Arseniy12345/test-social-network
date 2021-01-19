@@ -29,6 +29,7 @@ class FindAPIContainer extends React.Component {
           followingInProgress={this.props.followingInProgress}
           setUnfollow={this.props.setUnfollow}
           setFollow={this.props.setFollow}
+          portionSize={this.props.portionSize}
         />
       </>
     );
@@ -42,7 +43,8 @@ let mapStateToProps = (state) => {
     pageSize: getPageSize(state),
     totalCount: getTotalCount(state),
     isFetching: getIsFetching(state),
-    followingInProgress: getFollowingInProgress(state)
+    followingInProgress: getFollowingInProgress(state),
+    portionSize: state.findPage.portionSize,
   };
 };
 

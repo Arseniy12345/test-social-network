@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../Find/Find.module.css";
+import styles from "./Pagination.module.css";
 
 let Pagination = ({
   totalCount,
@@ -22,10 +22,19 @@ let Pagination = ({
   } else {
     rightPortionNumber = leftPortionNumber + portionSize - 1;
   }
-
+  const leftButtonDisabled = numberPortion > 1;
+  const rightButtonDisabled = numberPortion < countPortion;
   return (
     <div>
-      {numberPortion > 1 && <button onClick={() => {setNumberPortion(numberPortion - 1)}}>{"<-"}</button>}
+      <button
+        disabled={!leftButtonDisabled}
+        className={styles.forwardBackButton}
+        onClick={() => {
+          setNumberPortion(numberPortion - 1);
+        }}
+      >
+        <span>{"<-"}</span>
+      </button>
       {arrPageNumber
         .filter((p) => {
           if (p >= leftPortionNumber && p < rightPortionNumber + 1) {
@@ -35,17 +44,27 @@ let Pagination = ({
           }
         })
         .map((p) => (
-          <span
+          <div
             key={p}
+            className={styles.numberPageBlock}
             onClick={() => {
               getNextUsers(p);
             }}
-            className={p === pageNumber ? styles.selectedPage : ""}
           >
-            {" " + p + " "}
-          </span>
+            <span className={p === pageNumber ? styles.selectedPage : ""}>
+              {" " + p + " "}
+            </span>
+          </div>
         ))}
-        {numberPortion < countPortion && <button onClick={() => {setNumberPortion(numberPortion + 1)}}>{"->"}</button>}
+      <button
+        disabled={!rightButtonDisabled}
+        className={styles.forwardBackButton}
+        onClick={() => {
+          setNumberPortion(numberPortion + 1);
+        }}
+      >
+        <span>{"->"}</span>
+      </button>
     </div>
   );
 };

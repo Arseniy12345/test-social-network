@@ -1,10 +1,10 @@
 import React from 'react'
-import s from './Music.module.css'
+import styles from "../Common/CommonCSS/CommonCSS.module.css"
 
 const Music = () => {
     return (
         <div>
-            Music
+            <p className={styles.text}>Страница музыки</p>
         </div>
     )
 }

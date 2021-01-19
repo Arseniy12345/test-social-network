@@ -1,10 +1,10 @@
 import React from 'react'
-import s from './News.module.css'
+import styles from "../Common/CommonCSS/CommonCSS.module.css"
 
 const News = () => {
     return (
         <div>
-            News
+            <p className={styles.text}>Страница новостей</p>
         </div>
     )
 }

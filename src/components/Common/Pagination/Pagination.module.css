@@ -1,0 +1,33 @@
+.forwardBackButton {
+  margin: 5px;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0abcb8;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.forwardBackButton:hover {
+  background-color: #078886;
+}
+
+.forwardBackButton:disabled {
+    background-color: grey;
+  }
+
+.selectedPage {
+  font-weight: bold;
+}
+
+.numberPageBlock {
+    display: inline;
+    padding: 5px 5px 5px 10px;
+    border-radius: 5px;
+}
+
+.numberPageBlock:hover {
+    background-color: #bbbcbd;
+}

@@ -14,6 +14,7 @@ let initialState = {
   pageSize: 5,
   pageNumber: 1,
   totalCount: 0,
+  portionSize: 10,
   isFetching: false,
   followingInProgress: [],
 };

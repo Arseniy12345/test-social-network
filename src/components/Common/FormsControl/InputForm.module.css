@@ -1,9 +1,25 @@
+.inputContainer {
+  width: 265px;
+}
+
+.inputNoError {
+  width: 95%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-size: 15px;
+  padding: 5px;
+}
+
 .inputError {
-  border: 2px solid red;
+  border: 1px solid red;
 }
 
 .errorText {
     color: red;
+    padding-left: 10px;
 }
 
 .errorFromServer {

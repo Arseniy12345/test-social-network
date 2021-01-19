@@ -5,12 +5,12 @@ import {Field} from "redux-form"
 export const InputForm = ({ input, placeholder, type, meta: {touched, error}, text, ...props }) => {
   let hasError = touched && error;
   return (
-    <div>
+    <div className={styles.inputContainer}>
       <input
         {...input}
         placeholder={placeholder}
         type={type}
-        className={hasError && styles.inputError}
+        className={type === "checkbox" ? "" : `${styles.inputNoError} ${hasError ? styles.inputError : ""}`}
       /> {text}
       {hasError && <span className={styles.errorText}>{error}</span>}
     </div>

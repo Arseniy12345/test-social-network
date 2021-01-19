@@ -1,3 +1,45 @@
-.info { 
-    padding: 20px;
+.profileInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profilePhoto {
+  display: grid;
+  grid-template-rows: 120px 1fr;
+}
+
+.info {
+  padding: 20px;
+}
+
+.userPhoto {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.errorForm {
+  color: red;
+}
+
+.inputFile {
+  display: none;
+  width: 300px;
+}
+
+.editPhotoButton {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0abcb8;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.editPhotoButton:hover {
+  background-color: #078886;
 }

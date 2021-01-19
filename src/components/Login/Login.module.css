@@ -1,0 +1,25 @@
+.mainContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.submitButton {
+    margin: 5px 0px 10px 0px;
+    width: 265px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0ABCB8;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.submitButton:hover {
+    background-color: #078886;
+}
+
+.captchaPhoto {
+    width: 265px;
+}

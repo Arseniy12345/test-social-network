@@ -6,7 +6,7 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import { Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { setInitialaze } from "./redux/app-reducer";
 import { connect } from "react-redux";
@@ -21,8 +21,20 @@ const FindContainer = React.lazy(() =>
 );
 
 class App extends React.Component {
+  rejectionPromiseError(event) {
+    alert("reject promise");
+  }
+
   componentDidMount() {
     this.props.setInitialaze();
+    window.addEventListener("unhandledrejection", this.rejectionPromiseError);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "unhandledrejection",
+      this.rejectionPromiseError
+    );
   }
 
   render() {
@@ -30,17 +42,26 @@ class App extends React.Component {
       return <Preloader />;
     }
     return (
-      <div className="app-wrapper">
+      <div>
         <HeaderContainer />
-        <Nav />
-        <div className="app-wrapper-content">
-          <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
-          <Route path="/dialogs" render={withSuspence(DialogsContainer)} />
-          <Route path="/find" render={withSuspence(FindContainer)} />
-          <Route path="/login" render={() => <Login />} />
-          <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
-          <Route path="/settings" component={Settings} />
+        <div className="app-wrapper">
+          <Nav />
+          <div className="app-wrapper-content">
+            <Switch>
+              <Route exact path="/" render={() => <Redirect to="/profile" />} />
+              <Route
+                path="/profile/:userId?"
+                render={() => <ProfileContainer />}
+              />
+              <Route path="/dialogs" render={withSuspence(DialogsContainer)} />
+              <Route path="/find" render={withSuspence(FindContainer)} />
+              <Route path="/login" render={() => <Login />} />
+              <Route path="/news" component={News} />
+              <Route path="/music" component={Music} />
+              <Route path="/settings" component={Settings} />
+              <Route path="*" render={() => <div><p className="pageNotFoundText">СТРАНИЦА НЕ НАЙДЕНА</p></div>} />
+            </Switch>
+          </div>
         </div>
       </div>
     );

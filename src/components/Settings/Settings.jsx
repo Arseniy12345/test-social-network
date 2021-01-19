@@ -1,10 +1,10 @@
 import React from 'react'
-import s from './Settings.module.css'
+import styles from '../Common/CommonCSS/CommonCSS.module.css'
 
 const Settings = () => {
     return (
         <div>
-            Settings
+            <p className={styles.text}>Страница настроек</p>
         </div>
     )
 }

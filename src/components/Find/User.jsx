@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 let User = ({ user, followingInProgress, setFollow, setUnfollow }) => {
   return (
-    <div key={user}>
+    <div key={user.id} className={styles.userItem}>
       <NavLink to={`/profile/${user.id}`}>
         <img
           src={user.photos.small != null ? user.photos.small : userAva}
@@ -13,29 +13,35 @@ let User = ({ user, followingInProgress, setFollow, setUnfollow }) => {
           alt=""
         />
       </NavLink>
-      {user.followed ? (
+      <div>
+        <div>
+          <span><b>Ник:</b> {user.name}</span>
+        </div>
+        <div>
+          <span><b>Статус:</b> {user.status || "Всем привет!!!"}</span>
+        </div>
+        {user.followed ? (
         <button
           disabled={followingInProgress.includes(user.id) ? true : false}
+          className={styles.followButton}
           onClick={() => {
             setUnfollow(user.id);
           }}
         >
-          unfollow
+          Удалить из друзей
         </button>
       ) : (
         <button
           disabled={followingInProgress.includes(user.id) ? true : false}
+          className={styles.followButton}
           onClick={() => {
             setFollow(user.id);
           }}
         >
-          follow
+          Добавить в друзья
         </button>
       )}
-      <span>{user.name}</span>
-      <span> {user.status}</span>
-      <span> {"u.location.country"}</span>
-      <span> {"u.location.city"}</span>
+      </div>
     </div>
   );
 };

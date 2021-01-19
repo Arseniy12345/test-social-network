@@ -3,7 +3,7 @@ import User from "./User";
 import Pagination from "../Common/Pagination/Pagination"
 
 
-let Find = ({ totalCount, pageSize, pageNumber, getNextUsers, ...props }) => {
+let Find = ({ totalCount, pageSize, pageNumber, getNextUsers, portionSize, ...props }) => {
   return (
     <div>
       <Pagination
@@ -11,7 +11,7 @@ let Find = ({ totalCount, pageSize, pageNumber, getNextUsers, ...props }) => {
         pageSize={pageSize}
         pageNumber={pageNumber}
         getNextUsers={getNextUsers}
-        portionSize={10}
+        portionSize={portionSize}
       />
       {props.users.map((u) => (
         <User
