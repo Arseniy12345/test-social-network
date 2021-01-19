@@ -1,11 +1,21 @@
 .profileInfo {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: 1fr;
+  /* border: 1px solid #BBBCBD; */
+  box-shadow: 3px 3px 3px 3px #BBBCBD;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.contactsBlock {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .profilePhoto {
   display: grid;
-  grid-template-rows: 120px 1fr;
+  grid-template-rows: 105px 1fr;
 }
 
 .info {
@@ -29,17 +39,45 @@
 
 .editPhotoButton {
   width: 100px;
-  height: 30px;
+  height: 20px;
   border-radius: 5px;
   border: none;
   background-color: #0abcb8;
   color: white;
   font-size: 15px;
-  font-weight: 600;
   text-align: center;
-  padding-top: 5px;
 }
 
 .editPhotoButton:hover {
   background-color: #078886;
+}
+
+.status {
+  display: inline-block;
+}
+
+.descriptionText {
+  font-size: 20px;
+}
+
+.viewFullInfoButton {
+  float: right;
+  width: 300px;
+  height: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  color: #0abcb8;
+  font-size: 15px;
+  text-align: center;
+}
+
+.viewFullInfoButton:hover {
+  background-color: #e3e5e7;
+}
+
+.contacts {
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }

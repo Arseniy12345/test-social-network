@@ -31,61 +31,94 @@ const ProfileInfo = ({
   };
 
   return (
-    <div className={styles.profileInfo}>
-      <div className={styles.profilePhoto}>
-        <img
-          className={styles.userPhoto}
-          src={profileData.photos.small || userAva}
-          alt=""
-        />
-        {isOwner && (
-          <div>
-            <input type="file" id="img" className={styles.inputFile} onChange={onChangePhoto} />
-            <label for="img"><div className={styles.editPhotoButton}>sdvsdv</div></label>
-          </div>
-        )}
-      </div>
-      <div>
-        {profileData.fullName}
-        <StatusInfoWithHooks status={status} updateStatus={updateStatus} />
-        <div>
-          <b>LookingForAJob:</b>
-          {profileData.lookingForAJob ? "yes" : "no"}
-        </div>
-        <div>
-          <b>LookingForAJobDescription:</b>
-          {profileData.lookingForAJobDescription}
-        </div>
-        <div>
-          {fullInformation ? (
-            <button onClick={() => closeEditAndView()}>
-              Скрыть полную информацию
-            </button>
-          ) : (
-            <button onClick={() => viewFullInformation(true)}>
-              Показать полную информацию
-            </button>
+    <div>
+      <div className={styles.profileInfo}>
+        <div className={styles.profilePhoto}>
+          <img
+            className={styles.userPhoto}
+            src={profileData.photos.small || userAva}
+            alt=""
+          />
+          {isOwner && (
+            <div>
+              <input
+                type="file"
+                id="img"
+                className={styles.inputFile}
+                onChange={onChangePhoto}
+              />
+              <label for="img">
+                <div className={styles.editPhotoButton}>Изменить</div>
+              </label>
+            </div>
           )}
         </div>
+        <div className={styles.descriptionText}>
+          <div>
+            <span>
+              <b>ФИО: </b>
+              {profileData.fullName}
+            </span>
+          </div>
+          <span>
+            <b>Статус: </b>
+          </span>
+          <StatusInfoWithHooks status={status} updateStatus={updateStatus} />
+          <div>
+            <b>Ищет работу: </b>
+            {profileData.lookingForAJob ? "✓" : "✖"}
+          </div>
+          <div>
+            <b>Желаемая должность: </b>
+            {profileData.lookingForAJobDescription
+              ? profileData.lookingForAJobDescription
+              : "---"}
+          </div>
+          <div>
+            {fullInformation ? (
+              <button
+                className={styles.viewFullInfoButton}
+                onClick={() => closeEditAndView()}
+              >
+                Скрыть полную информацию ᐱ
+              </button>
+            ) : (
+              <button
+                className={styles.viewFullInfoButton}
+                onClick={() => viewFullInformation(true)}
+              >
+                Показать полную информацию ᐯ
+              </button>
+            )}
+          </div>
+        </div>
+        {fullInformation && !isEditMode && (
+          <div className={styles.contactsBlock}>
+            <div>
+              <span className={styles.descriptionText}>
+                <b>Контакты</b>
+              </span>
+            </div>
+            <Contacts profileData={profileData} />
+          </div>
+        )}
+        {fullInformation && isEditMode && (
+          <div className={styles.contactsBlock}>
+            <ContactsFormRedux
+              initialValues={profileData}
+              onSubmit={onSaveProfileData}
+            />
+          </div>
+        )}
+        {fullInformation && !isEditMode && isOwner && (
+          <button
+            className={styles.editPhotoButton}
+            onClick={() => setProfileEditMode(true)}
+          >
+            Изменить
+          </button>
+        )}
       </div>
-      {fullInformation && !isEditMode && <Contacts profileData={profileData} />}
-      {fullInformation && isEditMode && (
-        <ContactsFormRedux
-          initialValues={profileData}
-          onSubmit={onSaveProfileData}
-        />
-      )}
-      {isOwner && (
-        <button onClick={() => setProfileEditMode(true)}>Edit</button>
-      )}
-      {/* {isEditMode ? (
-        <ContactsFormRedux
-          initialValues={profileData}
-          onSubmit={onSaveProfileData}
-        />
-      ) : (
-        <Contacts profileData={profileData} />
-      )} */}
     </div>
   );
 };
