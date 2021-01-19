@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/Find/Find.module.css"],"names":[],"mappings":"AAAA,oBACI,UAAW,CACX,WACJ,CAEA,0BACI,eACJ","file":"4.37a42e07.chunk.css","sourcesContent":[".avatar {\r\n    width: 60px;\r\n    height: 60px;\r\n}\r\n\r\n.selectedPage {\r\n    font-weight: bold;\r\n}"]}
