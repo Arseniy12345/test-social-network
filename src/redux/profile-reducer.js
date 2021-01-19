@@ -9,9 +9,9 @@ const SET_PROFILE_EDIT_MODE = "profile/SET_PROFILE_EDIT_MODE";
 
 let initialState = {
   postsData: [
-    { id: 1, message: "Hello1", likeCount: "20" },
-    { id: 2, message: "Hello2", likeCount: "25" },
-    { id: 3, message: "Hello3", likeCount: "30" },
+    { id: 1, message: "Всем привет!!!", likeCount: "20" },
+    { id: 2, message: "Как ваши дела?", likeCount: "25" },
+    { id: 3, message: "React — JavaScript-библиотека с открытым исходным кодом для разработки пользовательских интерфейсов. React разрабатывается и поддерживается Facebook, Instagram и сообществом отдельных разработчиков и корпораций.", likeCount: "30" },
   ],
   profileData: {photos: {}},
   status: "",

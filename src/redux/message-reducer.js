@@ -2,18 +2,18 @@ const ADD_MESSAGE = "message/ADD_MESSAGE";
 
 let initialState = {
   dialogsData: [
-    { id: "1", name: "Arseniy" },
-    { id: "2", name: "Sveta" },
-    { id: "3", name: "Bla" },
-    { id: "4", name: "Lala" },
-    { id: "5", name: "Ogo" },
+    { id: "1", name: "Арсений" },
+    { id: "2", name: "Света" },
+    { id: "3", name: "Аня" },
+    { id: "4", name: "Максим" },
+    { id: "5", name: "Егор" },
   ],
   messagesData: [
-    { id: "1", text: "Hello" },
-    { id: "2", text: "How are you?" },
-    { id: "3", text: "yo" },
-    { id: "4", text: "yo" },
-    { id: "5", text: "yo" },
+    { id: "1", text: "Привет" },
+    { id: "2", text: "Как дела?" },
+    { id: "3", text: "React может использоваться для разработки одностраничных и мобильных приложений." },
+    { id: "4", text: "Redux — библиотека для JavaScript с открытым исходным кодом, предназначенная для управления состоянием приложения." },
+    { id: "5", text: "Содержит ряд инструментов, позволяющих значительно упростить передачу данных хранилища через контекст." },
   ],
 };
 

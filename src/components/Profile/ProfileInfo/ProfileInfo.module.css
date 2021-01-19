@@ -2,8 +2,7 @@
   display: grid;
   grid-template-columns: 130px 1fr;
   grid-template-rows: 1fr;
-  /* border: 1px solid #BBBCBD; */
-  box-shadow: 3px 3px 3px 3px #BBBCBD;
+  box-shadow: 3px 3px 3px 3px #bbbcbd;
   border-radius: 10px;
   padding: 15px;
 }
@@ -80,4 +79,12 @@
   margin-left: 20px;
   margin-top: 5px;
   margin-bottom: 20px;
+}
+
+.inputStatus {
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-size: 15px;
+  padding: 5px;
 }

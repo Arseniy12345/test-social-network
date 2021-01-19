@@ -1,16 +1,33 @@
-import React from 'react'
-import styles from './Post.module.css'
+import React from "react";
+import styles from "./Post.module.css";
+import Like from "../../../../assets/images/Like.svg";
+import Repost from "../../../../assets/images/Repost.svg";
+import User from "../../../../assets/images/user.png"
 
-const Post = ({message, likeCount}) => {
-    return (
-        <div className = {styles.post}>
-            <img src="https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg" alt=''/>
-            { message }
-            <div>
-                <span>Like</span> - { likeCount }
-            </div>
-        </div>
-    );
-}
+const Post = ({ message, likeCount, profileData }) => {
+  return (
+    <div className={styles.post}>
+      <div className={styles.profileBlock}>
+        <img
+          className={styles.userPhoto}
+          src={profileData.photos.small || User}
+          alt=""
+        />
+        <span className={styles.userName}>{profileData.fullName}</span>
+      </div>
+      <div></div>
+      <div className={styles.postText}>
+        <span>{message}</span>
+      </div>
+      <div className={styles.statisticBlock}>
+        <img className={styles.likeRepostButton} src={Like} alt="" />
+        <span className={styles.countText}>{likeCount}</span>
+        <span></span>
+        <img className={styles.likeRepostButton}src={Repost} alt=""/>
+        <span className={styles.countText}>15</span>
+      </div>
+    </div>
+  );
+};
 
-export default Post
+export default Post;

@@ -52,7 +52,7 @@ class ProfileAPIContainer extends React.Component {
         status={this.props.status}
         updateStatus={this.props.updateStatus}
         savePhoto={this.props.savePhoto}
-        isOwner={!this.props.match.params.userId}
+        isOwner={(!this.props.match.params.userId) || (this.props.match.params.userId == this.props.userId)}
         isEditMode={this.props.isEditMode}
         setProfileEditMode={this.props.setProfileEditMode}
         saveProfileData={this.props.saveProfileData}

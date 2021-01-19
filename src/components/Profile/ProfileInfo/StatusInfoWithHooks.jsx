@@ -27,6 +27,7 @@ const StatusInfoWithHooks = (props) => {
       )}
       {editMode && (
         <input
+          className={styles.inputStatus}
           type="text"
           autoFocus={true}
           onBlur={deactiveEditMode}
