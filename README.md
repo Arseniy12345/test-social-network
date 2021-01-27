@@ -1,3 +1,2 @@
 # Тестовый аккаунт
-Логин: free@samuraijs.com
-Пароль: free
+Логин: free@samuraijs.com / Пароль: free
